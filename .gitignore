@@ -1,0 +1,41 @@
+# Archivos de Visual Studio
+.vs/
+.vscode/
+.idea/
+
+# Archivos de usuario
+*.user
+*.rsuser
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Compilación
+bin/
+obj/
+Debug/
+Release/
+
+# Logs
+*.log
+Logs/
+
+# Variables de entorno
+.env
+.env.*
+!.env.example
+
+# Configuración de desarrollo (si contiene secretos)
+appsettings.Development.json
+
+# Secret Manager
+secrets.json
+
+# Publicaciones
+publish/
+PublishScripts/
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
+Desktop.ini

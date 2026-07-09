@@ -1,0 +1,6 @@
+@reword_HostAddress = http://localhost:5084
+
+GET {{reword_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
