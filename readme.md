@@ -43,7 +43,7 @@ Antes de ejecutar el proyecto, asegúrate de tener instalado:
 Clona el repositorio:
 
 ```bash
-git clone <URL_DEL_REPOSITORIO>
+git clone https://github.com/Jossdel/ReWord.git
 cd ReWord
 ```
 
