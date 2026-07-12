@@ -9,6 +9,7 @@ public class AppDbContext : DbContext
         : base(options)
     {
     }
-public DbSet<Users> Users { get; set; }
 
+    // DbSets
+    public DbSet<User> Users { get; set; }
 }
