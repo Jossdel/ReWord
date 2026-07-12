@@ -26,7 +26,10 @@ Logs/
 !.env.example
 
 # Configuración de desarrollo (si contiene secretos)
+.appsettings.json
+appsettings.json
 appsettings.Development.json
+
 
 # Secret Manager
 secrets.json
