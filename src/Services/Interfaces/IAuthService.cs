@@ -5,7 +5,7 @@ public interface IAuthService
 {
     Task<User?> RegisterAsync(RegisterDto registerDto);
 
-    Task<User?> LoginAsync(LoginDto loginDto);
+    Task<AuthResponseDto?> LoginAsync(LoginDto loginDto);
 }
 public interface IUserService
 {

@@ -12,8 +12,8 @@ using reword.src.Data;
 namespace reword.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20260712221825_UpdateUserModel")]
-    partial class UpdateUserModel
+    [Migration("20260715011057_AddAvatarToUser")]
+    partial class AddAvatarToUser
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -32,6 +32,10 @@ namespace reword.Migrations
                         .HasColumnType("integer");
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Avatar")
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("timestamp with time zone");
@@ -52,7 +56,7 @@ namespace reword.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("PasswordHash")
+                    b.Property<string>("Password")
                         .IsRequired()
                         .HasColumnType("text");
 
