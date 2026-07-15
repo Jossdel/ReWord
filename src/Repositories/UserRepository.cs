@@ -22,7 +22,7 @@ public async Task<User?> CreateAsync(User user)
 public async Task<User?> GetByEmailAsync (string email)
     {
         
-       return  await _context.Users.FirstOrDefaultAsync(f => f.Email == email);   
+       return  await _context.Users.SingleOrDefaultAsync(f => f.Email == email);   
     }
 public async Task<User?> GetByIdAsync(int id)
     {

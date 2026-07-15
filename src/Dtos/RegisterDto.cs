@@ -12,7 +12,7 @@ public class RegisterDto
 
     [Required]
     [MinLength(6)]
-    public string PasswordHash { get; set; } = string.Empty;
+    public string Password { get; set; } = string.Empty;
 
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 

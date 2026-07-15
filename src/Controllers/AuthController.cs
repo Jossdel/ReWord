@@ -1,6 +1,6 @@
 namespace reword.src.Controllers;
 
-using reword.src.Services;
+using reword.src.Services.Interfaces;
 using reword.src.Dtos;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,9 +8,9 @@ using Microsoft.AspNetCore.Mvc;
 [Route("api/auth")]
 public class AuthController : ControllerBase
 {
-    private readonly AuthService _authService;
+    private readonly IAuthService _authService;
 
-    public AuthController(AuthService authService)
+    public AuthController(IAuthService authService)
     {
         _authService = authService;
     }
@@ -31,8 +31,9 @@ if (user == null)
             user.Id,
             user.Name,
             user.Email,
+            user.Avatar,
             user.CreatedAt,
-     
+            user.Password,
             user.NativeLanguage,
             user.LearningLanguage
         });
@@ -40,28 +41,18 @@ if (user == null)
       [HttpPost("login")]
     public async Task<IActionResult> Login([FromBody] LoginDto loginDto)
     {
+              
+   try
+   {
         var user = await _authService.LoginAsync(loginDto);
-
-        if (user == null)
-        {
-            return Unauthorized(new
-            {
-                message = "Correo o contraseña incorrectos."
+        return Ok(user);
+  }
+   catch (Exception ex )
+   {
+   return Conflict(new{
+                message = ex.Message
             });
-        }
+   };
 
-        return Ok(new
-        {
-            message = "Inicio de sesión exitoso.",
-            user = new
-            {
-                user.Id,
-                user.Name,
-                user.Email,
-                user.NativeLanguage,
-                user.LearningLanguage,
-                user.CreatedAt
-            }
-        });
     }
 }
