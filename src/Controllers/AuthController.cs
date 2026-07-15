@@ -33,7 +33,7 @@ if (user == null)
             user.Email,
             user.Avatar,
             user.CreatedAt,
-            user.Password,
+           
             user.NativeLanguage,
             user.LearningLanguage
         });

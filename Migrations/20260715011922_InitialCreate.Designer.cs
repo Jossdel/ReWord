@@ -12,8 +12,8 @@ using reword.src.Data;
 namespace reword.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20260715011140_AddAvatarToUser1")]
-    partial class AddAvatarToUser1
+    [Migration("20260715011922_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
